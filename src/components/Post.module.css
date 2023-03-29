@@ -1,11 +1,89 @@
 .post {
+  background: var(--gray-800);
+  border-radius: 8px;
+  padding: 2.5rem;
 
 }
 
+/* Todo elemento com classe .post, que conter outro 
+ elemento com a classe .post logo em seguida, será
+ estilizado.*/
+
+.post + .post {
+  margin-top: 2rem;
+
+}
+
+/* O css buscará apenas a tag header que estiver
+no primeiro nível do elemento pai .post
+Sinal de maior >: significa filho-direto do elemento.
+Seleciona todos os filhos-diretos do elemento.*/
+
+.post > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.post > header time {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
 .author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorInfo strong {
+  color: var(--gray-100);
+  line-height: 1.6rem;
+
+}
+
+.authorInfo span {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  line-height: 1.6rem;
 
 }
 
 .avatar {
+  box-sizing: initial;
   
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+
+  border: 4px solid var(--gray-800);
+  outline: 2px solid var(--pink);
+  
+}
+
+.content {
+  line-height: 1.6;
+  color: var(--gray-300);
+  margin-top: 1.5rem;
+}
+
+.content p {
+  margin-top: 1rem;
+
+}
+
+.content a {
+  font-weight: bold;
+  color: var(--pink);
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: var(--pink-300);
 }
