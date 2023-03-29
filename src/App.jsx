@@ -1,12 +1,13 @@
-import { Post } from './Post'
+import { Post } from './components/Post'
 import { Header } from './components/Header'
+import { Sidebar } from './components/Sidebar'
 
 // Import CSS GLOBAL
 import './global.css'
 
 // IMPORT APP MODULE CSS
 import styles from './App.module.css'
-import { Sidebar } from './components/Sidebar'
+
 
 function App() {
 
