@@ -9,8 +9,11 @@
   --gray-900: #121214;
 
   --green-500: #00875f;
+  
   --pink-300: #f780f7;
   --pink: #FF5FFF;
+
+  --red: #F75A68;
 }
 
 :focus {
