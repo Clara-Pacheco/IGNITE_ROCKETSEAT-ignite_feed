@@ -150,3 +150,7 @@ Seleciona todos os filhos-diretos do elemento.*/
 .commentForm > button:hover {
   background: var(--pink-300);
 }
+
+.commentList {
+  margin-top: 2rem;
+}
