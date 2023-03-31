@@ -8,6 +8,44 @@ import './global.css'
 // IMPORT APP MODULE CSS
 import styles from './App.module.css'
 
+// author: { avatar_url: "", name: "", role: ""}
+// publishedAt: Date
+// content: String 
+
+const posts = [
+  {
+    id:1,
+    author: {
+      avatarURL: 'https://avatars.githubusercontent.com/u/93992748?v=4',
+      name: 'Clara Pacheco',
+      role: 'Webdesigner'
+    },
+    content: [
+      {type: 'paragraph', content: 'Fala galeraa 👋'},
+      {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      {type: 'link', content: 'jane.design/doctorcare'},
+      
+    ],
+    publishedAt: new Date('2023-03-30 19:16')
+  },
+  {
+    id:2,
+    author: {
+      avatarURL: 'https://github.com/diego3g.png',
+      name: 'Diego Fernandes',
+      role: 'CTO @Rocketseat'
+    },
+    content: [
+      {type: 'paragraph', content: 'Fala galeraa 👋'},
+      {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      {type: 'link', content: 'jane.design/doctorcare'},
+      
+    ],
+    publishedAt: new Date('2023-04-10 19:16')
+
+  }
+
+]
 
 function App() {
 
@@ -21,20 +59,15 @@ function App() {
        <Sidebar />
 
         <main>
-            <Post 
-            author='Clara Pacheco' 
-            content='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, nam sit. Blanditiis neque nesciunt enim, quod at praesentium. Cupiditate, laudantium facilis voluptatem porro beatae iure. Nisi repudiandae provident quidem debitis?'
-          />
-
-          <Post
-            author='Emma' 
-            content='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, nam sit. Blanditiis neque nesciunt enim, quod at praesentium. Cupiditate, laudantium facilis voluptatem porro beatae iure. Nisi repudiandae provident quidem debitis?'
-          />
-
-          <Post
-            author='Paulo' 
-            content='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, nam sit. Blanditiis neque nesciunt enim, quod at praesentium. Cupiditate, laudantium facilis voluptatem porro beatae iure. Nisi repudiandae provident quidem debitis?'
-          />
+           {posts.map(({author,content,publishedAt})=>{
+             return(
+              <Post 
+                author={author}
+                content={content}
+                publishedAt={publishedAt}
+              />
+             )
+           })}
         </main>
 
 
