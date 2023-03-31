@@ -3,7 +3,14 @@ import styles from './Post.module.css'
 import { Comment } from './Comment'
 import { Avatar } from './Avatar'
 
-export function Post() {
+// Post data structure:
+// author: { avatar_url: "", name: "", role: ""}
+// publishedAt: Date
+// content: String 
+
+
+export function Post({author,content,publishedAt}) {
+  console.log(author)
   return (
     <article className={styles.post}>
       <header>
