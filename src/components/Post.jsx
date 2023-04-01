@@ -15,9 +15,10 @@ import { useState } from 'react'
 export function Post({author,content,publishedAt}) {
 
   const [comments, setComments] = useState([
-    1,
-    2
+    'Post muito bacana,hein!'
   ])
+
+  const [newCommentText, setNewCommentText] = useState('')
 
   // Variável que será atribuída ao parâmetro title da tag <time>
   const publishedDateFormatted = format(publishedAt,"d 'de' LLLL 'às' HH:mm'h'", {
@@ -39,7 +40,13 @@ export function Post({author,content,publishedAt}) {
 
   function handleCreateNewComment(){
     event.preventDefault()
-    setComments([...comments, comments.length + 1])
+    
+    setComments([...comments, newCommentText])
+    setNewCommentText('')
+  }
+
+  function handleNewCommentChange() {
+    setNewCommentText(event.target.value)
   }
 
   return (
@@ -72,7 +79,12 @@ export function Post({author,content,publishedAt}) {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe o seu feedback</strong>
 
-        <textarea placeholder='Deixe um comentário'/>
+        <textarea
+         name="comment"
+         placeholder='Deixe um comentário'
+         value={newCommentText}
+         onChange={handleNewCommentChange}
+         />
 
         <footer>
           <button type='submit'>Publicar</button>
@@ -81,7 +93,7 @@ export function Post({author,content,publishedAt}) {
 
       <div className={styles.commentList}>
        {comments.map(comment=>{
-        return <Comment />
+        return <Comment content={comment} />
        })}
       </div>
     </article>
