@@ -103,7 +103,9 @@ export function Post({author,content,publishedAt}) {
          />
 
         <footer>
-          <button type='submit'>Publicar</button>
+          <button type='submit'>
+            Publicar
+          </button>
         </footer>
       </form>
 
