@@ -135,7 +135,7 @@ Seleciona todos os filhos-diretos do elemento.*/
   transition: background-color 0.1s
 }
 
-.commentForm > button:hover {
+.commentForm button[type=submit]:hover {
   background: var(--pink-300);
 }
 
